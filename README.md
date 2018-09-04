@@ -34,7 +34,7 @@ rspec path/to/spec_file.rb
 ## Authors
 
 * **Patrick Harris** - *Initial work* - [TinyGobby](https://github.com/TinyGobby)
-* **Alexandra Dresco** - *Initial work* - [
+* **Alexandra Dresco** - *Initial work* -
 [AlexDresco](https://github.com/AlexDresco)
 
 ## Acknowledgments
