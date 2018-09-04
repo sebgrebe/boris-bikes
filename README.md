@@ -13,11 +13,10 @@ Fork and clone to your local environment
 
 ### Prerequisites
 
-Install and initiate rspec
+Install rspec
 
 ```
 gem install rspec
-rspec --init
 ```
 
 ## Running the tests
