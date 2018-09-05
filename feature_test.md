@@ -56,6 +56,6 @@ I want a docking station to have a default capacity of 20 bikes.
 in irb
   load './lib/docking_station.rb'
   station = DockingStation.new
-  20.times { station.dock_bike(Bike.new) }
+  DEFAULT_CAPACITY.times { station.dock_bike(Bike.new) }
   station.dock_bike(Bike.new)
   --> raises error 'Oops, full'
