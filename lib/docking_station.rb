@@ -11,14 +11,22 @@ class DockingStation
   end
 
   def release_bike
-    fail "Sorry, there are no bikes" if empty?
-    @bikes.shift
+    bike = get_working_bike
+    fail "Sorry, there are no working bikes" if bike == nil
+    bike
   end
 
   def dock_bike(bike, status = true)
     fail "Oops, full." if full?
     bike.working = status
     @bikes.push(bike)
+  end
+
+  def get_working_bike
+    @bikes.each { |bike|
+      return @bikes.delete(bike) if bike.working?
+    }
+    nil
   end
 
 private

@@ -93,8 +93,8 @@ in irb
   bike = Bike.new
   station = DockingStation.new
   station.dock_bike(bike,false)
-  bike_released = station.release_bike
-  bike_released.working? == true
+  station.release_bike
+  --> raises error "Sorry, there are no working bikes"
 
 As a maintainer of the system,
 So that I can manage broken bikes and not disappoint users,

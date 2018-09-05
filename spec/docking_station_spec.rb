@@ -17,7 +17,7 @@ describe DockingStation do
   end
 
   it 'raises an error when releasing a bike and no bike is docked' do
-    expect { subject.release_bike }.to raise_error("Sorry, there are no bikes")
+    expect { subject.release_bike }.to raise_error("Sorry, there are no working bikes")
   end
 
   it 'raises an error when docking a bike when it is already full' do
@@ -31,17 +31,17 @@ describe DockingStation do
   end
 
  it 'sets default capacity to 20 when no capacity given' do
-   station = DockingStation.new
-   expect(station.capacity).to eq 20
+   expect(subject.capacity).to eq 20
  end
 
  it 'sets bike to not working when reported as not working on return' do
-   subject.dock_bike(bike,false)
+   subject.dock_bike(bike, false)
    expect(bike.working?).to be_falsey
  end
 
  it 'only returns working bikes on bike_release' do
-
+   subject.dock_bike(bike, false)
+   expect { subject.release_bike }.to raise_error("Sorry, there are no working bikes")
  end
 
 end
