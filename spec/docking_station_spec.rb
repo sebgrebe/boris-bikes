@@ -7,13 +7,12 @@ describe DockingStation do
     expect(subject.release_bike).to be_working
   end
 
-  # it { is_expected.to respond_to :dock_bike }
+  it { is_expected.to respond_to :dock_bike }
 
-  # it { is_expected.to respond_to(dock_bike(bike) }
-
-  it '...' do
+  it 'returns our instance of bike using see_bike' do
     bike = Bike.new
-    expect(subject.dock_bike(bike)).to eq('bike')
+    subject.dock_bike(bike)
+    expect(subject.bike).to eq(bike)
   end
 
 end
