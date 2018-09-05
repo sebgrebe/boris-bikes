@@ -99,3 +99,10 @@ in irb
 As a maintainer of the system,
 So that I can manage broken bikes and not disappoint users,
 I'd like docking stations to accept returning bikes (broken or not).
+
+  load './lib/docking_station.rb'
+  station = DockingStation.new
+  station.dock_bike(Bike.new,false)
+  # doesn't raise error
+  station.dock_bike(Bike.new,true)
+  # doesn't raise error
