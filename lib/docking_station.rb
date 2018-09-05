@@ -15,8 +15,9 @@ class DockingStation
     @bikes.shift
   end
 
-  def dock_bike(bike)
+  def dock_bike(bike, status = true)
     fail "Oops, full." if full?
+    bike.working = status
     @bikes.push(bike)
   end
 

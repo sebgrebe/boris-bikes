@@ -66,7 +66,36 @@ I want to be able to specify a larger capacity when necessary
 
 in irb
   load './lib/docking_station.rb'
-  station = DockingStation.new()
+  station = DockingStation.new
   station.capacity == 20
   station = DockingStation.new(30)
   station.capacity == 30
+
+-----------------------------------
+
+As a member of the public,
+So that I reduce the chance of getting a broken bike in future,
+I'd like to report a bike as broken when I return it.
+
+in irb
+  load './lib/docking_station.rb'
+  bike = Bike.new
+  station = DockingStation.new
+  station.dock_bike(bike,false)
+  bike.working? == false
+
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like docking stations not to release broken bikes.
+
+in irb
+  load './lib/docking_station.rb'
+  bike = Bike.new
+  station = DockingStation.new
+  station.dock_bike(bike,false)
+  bike_released = station.release_bike
+  bike_released.working? == true
+
+As a maintainer of the system,
+So that I can manage broken bikes and not disappoint users,
+I'd like docking stations to accept returning bikes (broken or not).
