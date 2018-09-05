@@ -48,3 +48,14 @@ in irb
   station.dock_bike(Bike.new)
   station.dock_bike(Bike.new)
   --> raises error 'Oops, full'
+
+As a system maintainer,
+So that I can plan the distribution of bikes,
+I want a docking station to have a default capacity of 20 bikes.
+
+in irb
+  load './lib/docking_station.rb'
+  station = DockingStation.new
+  20.times { station.dock_bike(Bike.new) }
+  station.dock_bike(Bike.new)
+  --> raises error 'Oops, full'

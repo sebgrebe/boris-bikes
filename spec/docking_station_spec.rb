@@ -13,7 +13,7 @@ describe DockingStation do
   it 'returns our instance of bike using see_bike' do
     bike = Bike.new
     subject.dock_bike(bike)
-    expect(subject.bike).to eq(bike)
+    expect(subject.bikes).to include(bike)
   end
 
   it 'raises an error when releasing a bike and no bike is docked' do
@@ -21,7 +21,7 @@ describe DockingStation do
   end
 
   it 'raises an error when docking a bike when it is already full' do
-    subject.dock_bike(Bike.new)
+    20.times { subject.dock_bike(Bike.new) }
     expect { subject.dock_bike(Bike.new) }.to raise_error("Oops, full.")
   end
 
