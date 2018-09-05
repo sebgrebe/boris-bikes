@@ -59,3 +59,14 @@ in irb
   DEFAULT_CAPACITY.times { station.dock_bike(Bike.new) }
   station.dock_bike(Bike.new)
   --> raises error 'Oops, full'
+
+As a system maintainer,
+So that busy areas can be served more effectively,
+I want to be able to specify a larger capacity when necessary
+
+in irb
+  load './lib/docking_station.rb'
+  station = DockingStation.new()
+  station.capacity == 20
+  station = DockingStation.new(30)
+  station.capacity == 30

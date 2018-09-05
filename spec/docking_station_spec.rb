@@ -25,4 +25,14 @@ describe DockingStation do
     expect { subject.dock_bike(Bike.new) }.to raise_error("Oops, full.")
   end
 
+  it 'sets capacity to 30 when capacity is set to 30' do
+    station = DockingStation.new(30)
+    expect(station.capacity).to eq 30
+  end
+
+ it 'sets default capacity to 20 when no capacity given' do
+   station = DockingStation.new
+   expect(station.capacity).to eq 20
+ end
+
 end
